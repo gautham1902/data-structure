@@ -7,6 +7,7 @@ int main()
 {
     int testArr[] = {12,56,34,78,99,2343,45,223,22,444,88,556,334};
     int length = sizeof(testArr)/sizeof(testArr[0]);
+    printf("length:%d\n",length);
 
     mergeSort(testArr,0,length);
 
@@ -23,8 +24,16 @@ void mergeSort(int arr[],int left, int right)
     if(left < right)
     {
         int mid = left +(right-left)/2;
-        mergeSort(arr, left,mid);
+        printf("Mid:%d\n",mid);
+        printf("left:%d\n",left);
+        printf("rig1:%d\n",right);
+        mergeSort(arr,left,mid);
+
+        printf("Mid2:%d\n",mid);
+        printf("rig2:%d\n",right);        
         mergeSort(arr,mid+1,right);
+
+        printf("rig3:%d\n",right);
         merge(arr,left,mid,right);
     }
 }
